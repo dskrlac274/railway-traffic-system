@@ -30,22 +30,22 @@ Built with **scalability and efficiency in mind**, the system incorporates multi
 
 ## 🏗️ Design Patterns Used
 
-| 🏷️ Pattern | 🛠️ Implementation | 🎯 Purpose |
-|------------|------------------|-----------|
-| **Strategy** | `ICijenaStrategy`, `WebMobilnaCijenaStrategy`, `BlagajnaCijenaStrategy`, `KupovinaUVlakuCijenaStrategy`, `CjenikContext` | Allows dynamic pricing strategies for ticket purchases based on method (online, at station, in train) and travel conditions. |
-| **State** | `StatusPrugeState`, `IspravnaState`, `UKvaruState`, `ZatvorenaState`, `UTestiranjuState`, `SegmentPruge` | Manages dynamic state transitions of railway segments (operational, under maintenance, closed). Prevents invalid transitions. |
-| **Command** | `KarteCommand`, `KupovinaKartiCommand`, `KarteReceiver`, `KupovinaKartiInvoker` | Encapsulates ticket purchase operations, enabling **undo functionality** for cancellations. |
-| **Memento** | `KupovinaKarteOriginator`, `KupovinaKarteMemento`, `KupovinaKarteCaretaker` | Saves and restores previous ticket purchases, enabling rollback if needed. |
-| **Chain of Responsibility** | `KKPV2SUpravitelj`, `UNDOUpravitelj`, `PSP2SUpravitelj`, `IRPSUpravitelj`, `CVPUpravitelj`, `IKKPVUpravitelj`, `UKP2SUpravitelj` | Handles processing of railway commands, ensuring proper delegation of responsibilities. |
-| **Flyweight** | Applied for train objects with similar properties | Optimizes memory usage by reusing shared train characteristics. |
-| **Composite** | Used for train schedules and stops | Organizes schedules hierarchically, making traversal and updates efficient. |
-| **Visitor** | Applied for analyzing train schedules | Decouples operations performed on schedules from their structure. |
-| **Observer** | Implemented for train notifications | Notifies users about train arrivals in real time. |
-| **Mediator** | Centralized notification management | Manages user notifications for train arrivals efficiently. |
-| **Factory Method** | Creates train instances dynamically | Encapsulates object creation logic, ensuring flexibility. |
-| **Bridge** | Applied for shortest path calculations | Separates logic for optimal route selection from train details. |
-| **Singleton** | Ensures only one instance of key components | Centralizes control over critical components. |
-| **Prototype** | Used for object cloning | Enables efficient duplication of train configurations. |
+| 🏷️ Pattern | 🎯 Purpose |
+|------------|-----------|
+| **Strategy** | Implements dynamic pricing strategies for ticket purchases, allowing flexibility based on the method of purchase (online, at station, in train) and travel conditions. |
+| **State** | Manages the state transitions of railway segments, ensuring smooth transitions between operational, maintenance, closed, and testing states while preventing invalid transitions. |
+| **Command** | Encapsulates ticket purchase operations, allowing users to undo or rollback their ticket purchases efficiently. |
+| **Memento** | Saves and restores previous ticket purchase states, enabling users to undo actions when necessary. |
+| **Chain of Responsibility** | Ensures structured and efficient processing of railway commands by delegating responsibilities across multiple handlers. |
+| **Flyweight** | Optimizes memory usage by sharing common attributes among train objects with similar properties. |
+| **Composite** | Structures train schedules and stops hierarchically, facilitating efficient traversal and modifications. |
+| **Visitor** | Separates analytical operations on train schedules, ensuring that new analysis functionalities can be added without modifying the core structure. |
+| **Observer** | Enables real-time user notifications for train arrivals, enhancing the system’s responsiveness. |
+| **Mediator** | Centralizes and manages notifications related to train arrivals, preventing direct dependencies between components. |
+| **Factory Method** | Ensures the flexible creation of train instances, improving object instantiation consistency. |
+| **Bridge** | Decouples the logic for calculating optimal train routes from train details, enhancing maintainability. |
+| **Singleton** | Guarantees that key components exist as a single instance, centralizing system control. |
+| **Prototype** | Allows efficient cloning of train configurations, reducing the need for repetitive instantiation. |
 
 ---
 
